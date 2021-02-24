@@ -68,7 +68,9 @@ class _MainPageState extends State<MainPage> {
   Widget _buildOffstageNavigator(TabItem tabItem) {
     return Offstage(
       offstage: _currentTab != tabItem,
-      child: MainNavigator(),
+      child: MainNavigator(
+        navigatorKey: _navigatorKeys[tabItem],
+      ),
     );
   }
 }

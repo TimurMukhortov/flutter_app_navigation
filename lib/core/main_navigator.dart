@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_navigation/feature/home_page.dart';
-import 'package:flutter_app_navigation/feature/profile_page.dart';
 import 'package:flutter_app_navigation/feature/other_page.dart';
+import 'package:flutter_app_navigation/feature/profile_page.dart';
 
 class MainNavigator extends StatelessWidget {
-  Map<String, WidgetBuilder> _routeBuilders(context) {
-    final Map<String, WidgetBuilder> routeBuilder = Map();
+  final GlobalKey<NavigatorState> navigatorKey;
 
-    // routeBuilder.addAll(FirstPage.router());
-    // routeBuilder.addAll(SecondPage.router());
-    // routeBuilder.addAll(ThirdPage.router());
-    // return routeBuilder;
+  MainNavigator({
+    this.navigatorKey,
+  });
+
+  Map<String, WidgetBuilder> _routeBuilders(context) {
     return {
       FirstPage.routeName: (context) => FirstPage(),
       ProfilePage.routeName: (context) => ProfilePage(),
@@ -22,6 +22,7 @@ class MainNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     final Map<String, WidgetBuilder> routeBuilders = _routeBuilders(context);
     return Navigator(
+      key: navigatorKey,
       initialRoute: FirstPage.routeName,
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
