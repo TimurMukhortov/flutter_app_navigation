@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'third_page.dart';
+import 'other_page.dart';
 
-class SecondPage extends StatelessWidget {
-  static const routeName = "second";
+class ProfilePage extends StatelessWidget {
+  static const routeName = "profile";
 
   static Map<String, WidgetBuilder> router() {
     return {
-      routeName: (context) => SecondPage(),
+      routeName: (context) => ProfilePage(),
     };
   }
 
@@ -15,7 +15,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second page"),
+        title: Text("Profile page"),
         centerTitle: true,
       ),
       body: Center(
@@ -24,10 +24,10 @@ class SecondPage extends StatelessWidget {
           splashColor: Colors.green,
           onPressed: () {
             Navigator.of(context).pushNamed(
-              ThirdPage.routeName,
+              OtherPage.routeName,
             );
           },
-          child: Text("Third page"),
+          child: Text("Other page"),
         ),
       ),
     );

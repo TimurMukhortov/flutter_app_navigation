@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_navigation/feature/first_page.dart';
-import 'package:flutter_app_navigation/feature/second_page.dart';
-import 'package:flutter_app_navigation/feature/third_page.dart';
+import 'package:flutter_app_navigation/feature/home_page.dart';
+import 'package:flutter_app_navigation/feature/profile_page.dart';
+import 'package:flutter_app_navigation/feature/other_page.dart';
 
 class MainNavigator extends StatelessWidget {
   Map<String, WidgetBuilder> _routeBuilders(context) {
@@ -13,8 +13,8 @@ class MainNavigator extends StatelessWidget {
     // return routeBuilder;
     return {
       FirstPage.routeName: (context) => FirstPage(),
-      SecondPage.routeName: (context) => SecondPage(),
-      ThirdPage.routeName: (context) => ThirdPage(),
+      ProfilePage.routeName: (context) => ProfilePage(),
+      OtherPage.routeName: (context) => OtherPage(),
     };
   }
 

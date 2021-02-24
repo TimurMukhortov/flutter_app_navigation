@@ -1,15 +1,10 @@
+
 import 'package:flutter/material.dart';
 
-import '../main.dart';
+import 'pages.dart';
 
-class ThirdPage extends StatelessWidget {
-  static const routeName = "third";
-
-  static Map<String, WidgetBuilder> router() {
-    return {
-      routeName: (context) => ThirdPage(),
-    };
-  }
+class RegistryPage extends StatelessWidget {
+  static const routeName = "registry";
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +14,7 @@ class ThirdPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text("Third page"),
+        title: Text("Registry"),
         centerTitle: true,
       ),
       body: Center(
@@ -30,7 +25,7 @@ class ThirdPage extends StatelessWidget {
             Navigator.pushNamedAndRemoveUntil(
               context,
               LoginPage.routeName,
-              (Route<dynamic> route) => false,
+                  (Route<dynamic> route) => false,
             );
           },
           child: Text("LoginPage"),
